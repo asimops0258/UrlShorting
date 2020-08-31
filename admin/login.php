@@ -38,18 +38,18 @@ if(isset($_POST['passwd']))
       </style>
     <div class="mdui-container">
       <div class="mdui-typo">
-        <h2 class="doc-chapter-title doc-chapter-title-first">登录后台</h2>
+        <h2 class="doc-chapter-title doc-chapter-title-first">登入後台</h2>
               <!-- 浮动标签 -->
               <div class="mdui-textfield mdui-textfield-floating-label">
-                  <label class="mdui-textfield-label">密码</label>
+                  <label class="mdui-textfield-label">密碼</label>
                   <input id="password" type="password" class="mdui-textfield-input" />
               </div>
               <br />
               <center>
-                  <button class="mdui-btn mdui-btn-raised mdui-ripple" id="btn" onclick="login()">登陆</button>
+                  <button class="mdui-btn mdui-btn-raised mdui-ripple" id="btn" onclick="login()">登入</button>
                   <?php if(!empty(mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM config where type='xoauth'"))['content'])){ ?>
                   <div style='height:10px'></div>
-                  <button class="mdui-btn mdui-btn-raised mdui-ripple" onclick="window.location.href='<?php echo "http://oauth.xsot.cn/oauth.php?response_type=code&client_id=". CLIENT_ID ."&redirect_uri=".$url."app/oauth.php" ?>'">第三方登录</button>
+                  <button class="mdui-btn mdui-btn-raised mdui-ripple" onclick="window.location.href='<?php echo "http://oauth.xsot.cn/oauth.php?response_type=code&client_id=". CLIENT_ID ."&redirect_uri=".$url."app/oauth.php" ?>'">第三方登入</button>
                   <?php } ?>
               </center>
       </div>
@@ -73,30 +73,30 @@ if(isset($_POST['passwd']))
           if(data == '200')
           {
             mdui.snackbar({
-              message: '登陆成功,跳转中!',
+              message: '登入成功,跳轉中!',
               position: 'right-top'
             });
             setTimeout("window.location='index.php'",2000)
           }else{
             mdui.snackbar({
-              message: '密码错误!',
+              message: '密碼錯誤!',
               position: 'right-top'
             });
             $('#btn').removeAttr('disabled');
-            $('#btn').val('登陆');
+            $('#btn').val('登入');
           }
         },
         complete: function (xhr, textStatus) 
         {
-          $('#btn').text('登陆')
+          $('#btn').text('登入')
           if(textStatus == 'timeout')
           {
             mdui.snackbar({
-            message: '请求超时!',
+            message: '請求時間過長!',
             position: 'right-top'
           });
           $('#btn').removeAttr('disabled');
-          $('#btn').val('登陆');
+          $('#btn').val('登入');
         }
       } 
       });
