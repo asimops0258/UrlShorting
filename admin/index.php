@@ -1,50 +1,50 @@
 <?php require_once "header.php"; ?>
-<title>首页 - 星辰短域|密语</title>
+<title>後台首頁 - 星辰短網址|密語</title>
 <div style="Height:20px"></div>
 <div class="mdui-container">
-  <h2 style="font-weight:400">官方信息</h2>
+  <h2 style="font-weight:400">官方訊息</h2>
   <ul class="mdui-list">
     <li id="officalInfo" style="font-weight:400" class="mdui-list-item mdui-ripple">Loading...</li>
   </ul>
 </div>
 </div>
 <div class="mdui-container">
-  <h2 style="font-weight:400">系统信息</h2>
+  <h2 style="font-weight:400">伺服器訊息</h2>
   <ul class="mdui-list">
     <li class="mdui-list-item mdui-ripple">
       <i class="mdui-list-item-icon mdui-icon material-icons">grain</i>
       <div class="mdui-list-item-content">
-        短域: <?php getNum($conns,'information') ?>个
+        短網址總計: <?php getNum($conns,'information') ?>個
       </div>
     </li>
     <li class="mdui-list-item mdui-ripple">
       <i class="mdui-list-item-icon mdui-icon material-icons">not_interested</i>
       <div class="mdui-list-item-content">
-        BAN: <?php getNum($conns,'ban') ?>个
+        已封鎖: <?php getNum($conns,'ban') ?>個
       </div>
     </li>
     <li class="mdui-list-item mdui-ripple">
       <i class="mdui-list-item-icon mdui-icon material-icons">panorama_vertical</i>
       <div class="mdui-list-item-content">
-        PHP: <?PHP echo PHP_VERSION; ?>
+        PHP版本: <?PHP echo PHP_VERSION; ?>
       </div>
     </li>
     <li class="mdui-list-item mdui-ripple">
       <i class="mdui-list-item-icon mdui-icon material-icons">airplay</i>
       <div class="mdui-list-item-content">
-        系统: <?PHP echo php_uname('s'); ?>
+        系統版本: <?PHP echo php_uname('s'); ?>
       </div>
     </li>
     <li class="mdui-list-item mdui-ripple">
       <i class="mdui-list-item-icon mdui-icon material-icons">web</i>
       <div class="mdui-list-item-content">
-        服务端: <?PHP echo $_SERVER['SERVER_SOFTWARE']; ?>
+        網頁伺服器版本: <?PHP echo $_SERVER['SERVER_SOFTWARE']; ?>
       </div>
     </li>
     <li class="mdui-list-item mdui-ripple">
       <i class="mdui-list-item-icon mdui-icon material-icons">dns</i>
       <div class="mdui-list-item-content">
-        主机名: <?PHP echo php_uname('n');  ?>
+        主機名稱: <?PHP echo php_uname('n');  ?>
       </div>
     </li>
   </ul>
