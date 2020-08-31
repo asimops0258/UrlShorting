@@ -27,7 +27,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/soxft/cdn@master/mdui/css/mdui.min.css">
         <script src="https://cdn.jsdelivr.net/gh/soxft/cdn@master/mdui/js/mdui.min.js"></script>
         <title>
-            加密页面 - Powered by XCSOFT
+            加密頁面 - Powered by XCSOFT
         </title>
     </head>
     <body>
@@ -39,30 +39,30 @@
                     </button>
                 </div>
             <div class="mdui-card-primary">
-                <div class="mdui-card-primary-title">请输入密码</div>
+                <div class="mdui-card-primary-title">請輸入密碼</div>
                 <div class="mdui-card-primary-subtitle">Please Input Passwd</div>
             </div>
             <div class="mdui-card-content">
                 <div class="mdui-textfield">
-                    <input class="mdui-textfield-input" id="passwd" type="password" placeholder="请输入密码"/>
+                    <input class="mdui-textfield-input" id="passwd" type="password" placeholder="請輸入密碼"/>
                 </div>
                 <br>
             </div>
             <div class="mdui-card-actions">
                 <center>
-                    <button id="btn" onclick="submit()" class="mdui-btn mdui-ripple mdui-btn-dense">确认</button>
+                    <button id="btn" onclick="submit()" class="mdui-btn mdui-ripple mdui-btn-dense">確認</button>
                 </center>
             </div>
         </div>
     </div>
     <script>
-    console.log("\n %c 星辰短域|密语 %c Powered by XCSOFT | xsot.cn ","color:#444;background:#eee;padding:5px 0;", "color:#eee;background:#444;padding:5px 0;");
+    console.log("\n %c 星辰短網址|密語 %c Powered by XCSOFT | xsot.cn ","color:#444;background:#eee;padding:5px 0;", "color:#eee;background:#444;padding:5px 0;");
     var $ = mdui.JQ;
 	function submit()
 	{
 	    passwd = $('#passwd').val();
 	    $('#btn').attr('disabled',true);
-      $('#btn').text('处理中...');
+      $('#btn').text('處理中...');
 	    //构建ajax请求
 	    $.ajax({
 	       method: 'post',
@@ -77,25 +77,25 @@
 	           if(data == 200)
 	           {
 	              mdui.snackbar({
-                    message: '密码正确,跳转中..',
+                    message: '密碼正確,轉跳中..',
                     position: 'right-top'
                 }); 
                 window.setTimeout("window.location.reload();", 3000);
 	           }else{
 	               mdui.snackbar({
-                    message: '密码错误!',
+                    message: '密碼錯誤!',
                     position: 'right-top'
                 });
 	           }
 	       },
 	       complete: function(xhr,status)
 	       {
-	           $('#btn').text('确认');
+	           $('#btn').text('確認');
 	           $('#btn').removeAttr('disabled')
 	           if(status == 'timeout')
 	           {
 	            mdui.snackbar({
-                    message: '请求超时!',
+                    message: '請求超時!',
                     position: 'right-top'
                 });
 	           }
