@@ -1,7 +1,7 @@
 <?php
 if(!file_exists("install.lock")){
 header("Refresh:0;url=\"./install.php\"");
-exit("正在跳转到安装界面...");
+exit("正在跳轉至安裝介面...");
 }else{
 }
 require_once('header.php');
@@ -12,8 +12,8 @@ echo <<<EOF
       <div class="mdui-card">
         <div class="mdui-card-header">
           <img class="mdui-card-header-avatar" src="./assets/img/logo.png"/>
-          <div class="mdui-card-header-title">星辰短域|密语</div>
-          <div class="mdui-card-header-subtitle">一款简洁美观的短域|密语平台</div>
+          <div class="mdui-card-header-title">星辰短網址|密語</div>
+          <div class="mdui-card-header-subtitle">一款簡潔美觀的短網址平台|密語平台</div>
         </div>
         <div class="mdui-card-media">
           <img src="http://soxft.cn/assets/img/team.png"/>
@@ -23,10 +23,10 @@ echo <<<EOF
 <br/>
 作者：XCSOFT(XSOT.CN)<br/>
 <br/>
-使用语言(框架)：PHP HTML MDUI MYSQL<br/>
+使用語言(框架)：PHP HTML MDUI MYSQL<br/>
   </div>
   <div class="mdui-card-actions">
-<a class="mdui-btn mdui-ripple" href="//blog.xsot.cn/archives/pro-URLshorting.html">官网</a>
+<a class="mdui-btn mdui-ripple" href="//blog.xsot.cn/archives/pro-URLshorting.html">官網</a>
 <a class="mdui-btn mdui-ripple" href="//github.com/soxft/URLshorting">Github</a>
   </div>
 </div>
