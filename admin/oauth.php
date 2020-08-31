@@ -33,7 +33,7 @@ if(empty($_GET['code'])){
         </li>";
   }
   ?>
-  <title>第三方登录 - 星辰短域|密语</title>
+  <title>第三方登入 - 星辰短網址|密語</title>
   <div style="Height:20px"></div>
     <div class="mdui-container">
     <h2 style="font-weight:400">操作</h2>
@@ -41,13 +41,13 @@ if(empty($_GET['code'])){
         <!-- 文档 -->
       <li onclick="window.location.href='<?php echo "http://oauth.xsot.cn/oauth.php?response_type=code&client_id=". CLIENT_ID ."&redirect_uri=".$url."admin/oauth.php" ?>'" class="mdui-list-item">
         <i class="mdui-list-item-icon mdui-icon material-icons">assessment</i>
-        <div class="mdui-list-item-content">添加新用户</div>
+        <div class="mdui-list-item-content">新增使用者</div>
       </li>
     </ul>
   </div>
   <div class="mdui-container">
-  <h2 style="font-weight:400">第三方登录</h2>
-  <p style='color:grey;font-size:15px;'>第三方授权登陆列表,使用星辰oauth</p>
+  <h2 style="font-weight:400">第三方登入</h2>
+  <p style='color:grey;font-size:15px;'>星辰oauth第三方授權登入列表</p>
     <ul class="mdui-list">
     <?php echo $list ?>
     </ul>
@@ -60,7 +60,7 @@ if(empty($_GET['code'])){
   
   function del(user)
   {
-    mdui.confirm('你确定要取消授权吗?', function(){
+    mdui.confirm('您確定要取消授權嗎?', function(){
       del_go(user)
     });
   }
@@ -81,13 +81,13 @@ if(empty($_GET['code'])){
             data = eval('(' + data + ')');
             if (data['code'] == '200') {
                 mdui.snackbar({
-                    message: '取消授权成功',
+                    message: '取消授權成功',
                     position: 'right-top',
                 });
                 setTimeout(function () {$('#' + user + '').remove();}, 100);  //jquery移除指定
             } else {
                 mdui.snackbar({
-                    message: '出现错误<br/>错误信息:' + data['msg'],
+                    message: '出現錯誤<br/>錯誤訊息:' + data['msg'],
                     position: 'right-top',
                 });
             }
@@ -97,12 +97,12 @@ if(empty($_GET['code'])){
           $('#loading').hide();
             if (textStatus == 'timeout') {
                 mdui.snackbar({
-                    message: '请求超时!',
+                    message: '請求超時!',
                     position: 'right-top',
                 });
             } else if (textStatus !== 'success') {
                 mdui.snackbar({
-                    message: '出现未知错误,错误代码:' + textStatus,
+                    message: '出現未知錯誤,錯誤代碼:' + textStatus,
                     position: 'right-top',
                 });
             }
@@ -143,7 +143,7 @@ if(empty($_GET['code'])){
       header("Refresh:0;URL='./oauth.php'");
     }
   } else{
-    echo "<h2>出现未知错误!错误代码:" . $arr['code']."</h2>";
+    echo "<h2>出現未知錯誤!錯誤代碼:" . $arr['code']."</h2>";
     header("Refresh:2;URL='./oauth.php'");
   }
 }?>
