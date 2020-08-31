@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>短域管理 - 星辰短域|密语</title>
+    <title>短網址管理 - 星辰短網址|密語</title>
     <?php
     require_once("./header.php");
     $p = $_GET['p'];
@@ -24,18 +24,18 @@
  }else{
    $page_all = 1;
  }
-    echo "<h4>TIP:因字符原因,表格显示不全,手机用户可以向左滑动看到更多信息,电脑用户翻阅到表格最下端拖动控制条.</h4>";
+    echo "<h4>提示訊息:因字符原因,表格顯示不完全,手機用戶可以想左滑動觀看更多訊息,電腦用戶可使用表格下端的控制條.</h4>";
     echo "<br /><center><div class=\"mdui-table-fluid\">
                         <table class=\"mdui-table mdui-table-hoverable\">
                             <tr>
-                                <th>短域</th>
-                                <th>内容</th>
-                                <th>种类</th>
+                                <th>短網址</th>
+                                <th>內容</th>
+                                <th>種類</th>
                                 <th>ip</th>
-                                <th>密码</th>
-                                <th>时间</th>
-                                <th>短域状态</th>
-                                <th>IP状态</th>
+                                <th>密碼</th>
+                                <th>時間</th>
+                                <th>狀態</th>
+                                <th>IP狀態</th>
                                 <th>管理</th>
                             </tr>";
 // 表格开头
@@ -71,16 +71,16 @@
         <td>$check</td>
         <td>$check2</td>
         <td>
-          <a href=\"./processing.php?shorturl=$row->shorturl&&type=del\" class=\"mdui-btn mdui-btn-raised mdui-ripple\">删除</a>";
+          <a href=\"./processing.php?shorturl=$row->shorturl&&type=del\" class=\"mdui-btn mdui-btn-raised mdui-ripple\">刪除</a>";
 if($check=="正常"){
-  echo "<a href=\"./processing.php?shorturl=$row->shorturl&&type=domain\" class=\"mdui-btn mdui-btn-raised mdui-ripple\">封短域</a>";
+  echo "<a href=\"./processing.php?shorturl=$row->shorturl&&type=domain\" class=\"mdui-btn mdui-btn-raised mdui-ripple\">封鎖</a>";
 }else{
-  echo "<a href=\"./processing.php?content=$row->shorturl&&type=cancel&&from=control\" class=\"mdui-btn mdui-btn-raised mdui-ripple\">解短域</a>";
+  echo "<a href=\"./processing.php?content=$row->shorturl&&type=cancel&&from=control\" class=\"mdui-btn mdui-btn-raised mdui-ripple\">解除封鎖</a>";
 }
 if($check2=="正常"){
-  echo "<a href=\"./processing.php?ip=$row->ip&&type=ip\" class=\"mdui-btn mdui-btn-raised mdui-ripple\">封ip</a>";
+  echo "<a href=\"./processing.php?ip=$row->ip&&type=ip\" class=\"mdui-btn mdui-btn-raised mdui-ripple\">封鎖IP</a>";
 }else{
-  echo "<a href=\"./processing.php?content=$row->ip&&type=cancel&&from=control\" class=\"mdui-btn mdui-btn-raised mdui-ripple\">解IP</a>";
+  echo "<a href=\"./processing.php?content=$row->ip&&type=cancel&&from=control\" class=\"mdui-btn mdui-btn-raised mdui-ripple\">解除封鎖IP</a>";
 }              
      echo"</td></tr>";
     }
@@ -91,11 +91,11 @@ if($check2=="正常"){
     //计算一下上一页或者下一页的page
     echo "<br />";
     if($p != 1){
-      echo  "<a href=\"./control.php?p=$page_last\" class=\"mdui-btn mdui-btn-raised mdui-ripple\">上一页</a>";
+      echo  "<a href=\"./control.php?p=$page_last\" class=\"mdui-btn mdui-btn-raised mdui-ripple\">上一頁</a>";
     }
     echo "&emsp;"; 
     if($p != $page_all){
-      echo "<a href=\"./control.php?p=$page_next\" class=\"mdui-btn mdui-btn-raised mdui-ripple\">下一页</a>"; 
+      echo "<a href=\"./control.php?p=$page_next\" class=\"mdui-btn mdui-btn-raised mdui-ripple\">下一頁</a>"; 
     }
     //按钮跳转
     echo "<br />";
