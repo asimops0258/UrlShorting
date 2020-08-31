@@ -12,16 +12,16 @@ $urlpasswd = $_SESSION['passwd'];
 if(empty($urlpasswd)){
     $text = $shorturl; 
 }else{
-    $text = "链接: " . $shorturl . " | 密码: " . $urlpasswd;
+    $text = "連結: " . $shorturl . " | 密碼: " . $urlpasswd;
 }
 ?>
 <div class="mdui-container doc-container">
     <div class="mdui-typo">
-        <h2>缩短成功!</h2>
+        <h2>縮址成功!</h2>
         <center>
           <br />
           <div id="qrcode"></div>
-          <h3>短链接:<div class="URL" id="URL" data-clipboard-text="<?PHP echo $text; ?>"><?PHP echo($shorturl); ?><?php if(!empty($urlpasswd)):?><br/>密码: <?php echo $_SESSION['passwd'] ?>
+          <h3>短網址:<div class="URL" id="URL" data-clipboard-text="<?PHP echo $text; ?>"><?PHP echo($shorturl); ?><?php if(!empty($urlpasswd)):?><br/>密碼: <?php echo $_SESSION['passwd'] ?>
           <?php endif ?></h3></div>
         </center>
     </div>
@@ -47,7 +47,7 @@ if(empty($urlpasswd)){
   new ClipboardJS(".URL");
   $(".URL").click(function() {
     mdui.snackbar({
-      message: "链接已复制"
+      message: "已複製連結"
     });
   }) 
 </script>
