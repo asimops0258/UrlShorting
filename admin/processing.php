@@ -12,19 +12,19 @@ if ($type == "del") {
     $comd1 = "delete from `information` WHERE shorturl='$shorturl'";
     //确认账号所有者是否为admin
     $go = mysqli_query($conn,$comd1);
-    echo("<center><h2>删除成功!</h2></center>");
+    echo("<center><h2>刪除成功!</h2></center>");
     header("Refresh:1;url=\"./control.php\"");
 } elseif ($type == "domain") {
     $comd = "SELECT * FROM `ban` WHERE content='$shorturl'";
     $count = mysqli_query($conn,$comd);
     $arr = mysqli_fetch_assoc($count);
     if (!empty($arr['type'])) {
-        echo("<center><h2> 已存在,跳转中...</h2></center>");
+        echo("<center><h2> 已存在,跳轉中...</h2></center>");
         header("Refresh:1;url=\"./control.php\"");
     } else {
         $comd1 = "insert into `ban` values('domain','$shorturl','$time');";
         $go = mysqli_query($conn,$comd1);
-        echo("<center><h2>添加成功!</h2></center>");
+        echo("<center><h2>新增成功!</h2></center>");
         header("Refresh:1;url=\"./control.php\"");
     }
 } elseif ($type == "ip") {
@@ -32,18 +32,18 @@ if ($type == "del") {
     $count1 = mysqli_query($conn,$comd1);
     $arr1 = mysqli_fetch_assoc($count1);
     if (!empty($arr1['type'])) {
-        echo("<center><h2> 已存在,跳转中...</h2></center>");
+        echo("<center><h2> 已存在,跳轉中...</h2></center>");
         header("Refresh:1;url=\"./control.php\"");
     } else {
         $comd1 = "insert into `ban` values('ip','$ip','$time');";
         $go = mysqli_query($conn,$comd1);
-        echo("<center><h2>添加成功!</h2></center>");
+        echo("<center><h2>新增成功!</h2></center>");
         header("Refresh:1;url=\"./control.php\"");
     }
 } elseif ($type == "cancel") {
     $comd1 = "delete from `ban` where `content`='$content';";
     $go = mysqli_query($conn,$comd1);
-    echo("<center><h2>解BAN成功!</h2></center>");
+    echo("<center><h2>已解除封鎖!</h2></center>");
     if($from == "ban"){
     header("Refresh:1;url=\"./ban.php\"");
     }elseif($from == "control"){
