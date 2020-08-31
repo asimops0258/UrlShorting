@@ -25,14 +25,14 @@
                 <div class="mdui-card-primary-title"><?php echo getTopHost($information) ?></div>
                 <div class="mdui-card-primary-subtitle" id="safeInfo">安全性未知</div>
             </div>
-            <div class="mdui-card-content">即将跳转到:&nbsp;
+            <div class="mdui-card-content">即將跳轉至:&nbsp;
                 <div class="mdui-chip"><span class="mdui-chip-title" id="url"></span>
                 </div>
                 <br>
             </div>
             <div class="mdui-card-actions">
                 <center>
-                    <button id="btn" onclick="jump()" class="mdui-btn mdui-ripple mdui-btn-dense">立即跳转</button>
+                    <button id="btn" onclick="jump()" class="mdui-btn mdui-ripple mdui-btn-dense">立即前往</button>
                 </center>
             </div>
         </div>
@@ -41,41 +41,41 @@
     <div class="mdui-container" style="max-width: 400px; display: none" id="urlCheckPage">
     <div class="mdui-card">
         <div class="mdui-card-primary">
-            <div class="mdui-card-primary-title" id="safeInfo_2">详细数据</div>
-            <div class="mdui-card-primary-subtitle" id="safeInfo">数据来源: 腾讯网址安全中心</div>
+            <div class="mdui-card-primary-title" id="safeInfo_2">詳細資訊</div>
+            <div class="mdui-card-primary-subtitle" id="safeInfo">資料來源: 騰訊網址安全中心</div>
         </div>
         <ul class="mdui-list">
             <li class="mdui-list-item mdui-ripple">
                 <div class="mdui-list-item-content">
-                    <div class="mdui-list-item-title">是否备案: 
+                    <div class="mdui-list-item-title">是否備案: 
                       <span id="beian">Loading...</span>
                     </div>
                 </div>
             </li>
             <li id="icporg_li" class="mdui-list-item mdui-ripple">
                 <div class="mdui-list-item-content">
-                    <div class="mdui-list-item-title">备案主体: 
+                    <div class="mdui-list-item-title">備案主體: 
                         <span id="icporg">Loading...</span>
                     </div>
                 </div>
             </li>
             <li id="icpdode_li" class="mdui-list-item mdui-ripple">
                 <div class="mdui-list-item-content">
-                    <div class="mdui-list-item-title">备案号: 
+                    <div class="mdui-list-item-title">備案號: 
                         <span id="icpdode">Loading...</span>
                     </div>
                 </div>
             </li>
             <li id="wordtit_li" class="mdui-list-item mdui-ripple">
                 <div class="mdui-list-item-content">
-                    <div class="mdui-list-item-title">报毒原因标题: 
+                    <div class="mdui-list-item-title">報毒原因標題: 
                         <span id="wordtit">Loading...</span>
                     </div>
                 </div>
             </li>
             <li id="word_li" class="mdui-list-item mdui-ripple">
                 <div class="mdui-list-item-content">
-                    <div class="mdui-list-item-title">报毒原因: 
+                    <div class="mdui-list-item-title">報毒原因: 
                         <span id="word">Loading...</span>
                     </div>
                 </div>
@@ -84,7 +84,7 @@
     </div>
 </div>
     <script>
-    console.log("\n %c 星辰短域|密语 %c Powered by XCSOFT | xsot.cn ","color:#444;background:#eee;padding:5px 0;", "color:#eee;background:#444;padding:5px 0;");
+    console.log("\n %c 星辰短網址|密語 %c Powered by XCSOFT | xsot.cn ","color:#444;background:#eee;padding:5px 0;", "color:#eee;background:#444;padding:5px 0;");
     var $ = mdui.JQ;
 	  $('#url').html(str_split('<?php echo $information ?>','32'))
   	function str_split(string, len){
@@ -145,8 +145,8 @@
 	  
 	  if ("<?php echo getResult($conn,"urlcheck ") ?>"==""?false:true) {
     //检测是否开启了网址安全检测
-    $('#safeInfo').replaceWith('<div class="mdui-card-primary-subtitle" id="safeInfo">网址安全检测中...</div>');
-    $('#btn').replaceWith('<button id="btn" onclick="jump()" class="mdui-btn mdui-ripple mdui-btn-dense">网址安全检测中...</button>')
+    $('#safeInfo').replaceWith('<div class="mdui-card-primary-subtitle" id="safeInfo">網頁安全檢查中...</div>');
+    $('#btn').replaceWith('<button id="btn" onclick="jump()" class="mdui-btn mdui-ripple mdui-btn-dense">網頁安全檢查中...</button>')
     //构建ajax请求
     $.ajax({
         method: 'POST',
@@ -158,24 +158,24 @@
           data =  eval('(' + data + ')');
           if(data['type'] == 3)
           {
-            $('#safeInfo').replaceWith('<div class="mdui-card-primary-subtitle" id="safeInfo">网址安全,请放心访问!</div>');
-            $('#btn').replaceWith('<button onclick="jump()" class="mdui-btn mdui-ripple mdui-btn-dense">跳转中...</button>');
+            $('#safeInfo').replaceWith('<div class="mdui-card-primary-subtitle" id="safeInfo">此網頁很安全,請安心瀏覽!</div>');
+            $('#btn').replaceWith('<button onclick="jump()" class="mdui-btn mdui-ripple mdui-btn-dense">轉跳中...</button>');
             window.setTimeout("window.location='<?php echo $information ?>'", 3000);
           }else if(data['type'] == 2)
           {
-            $('#safeInfo').replaceWith('<div class="mdui-card-primary-subtitle" id="safeInfo">网址危险,请谨慎访问!</div>');
+            $('#safeInfo').replaceWith('<div class="mdui-card-primary-subtitle" id="safeInfo">此網頁有危險,請謹慎瀏覽!</div>');
           }else{
             $('#safeInfo').replaceWith('<div class="mdui-card-primary-subtitle" id="safeInfo">安全性未知</div>');
-            $('#btn').replaceWith('<button onclick="jump()" class="mdui-btn mdui-ripple mdui-btn-dense">跳转中...</button>');
+            $('#btn').replaceWith('<button onclick="jump()" class="mdui-btn mdui-ripple mdui-btn-dense">轉跳中...</button>');
             window.setTimeout("window.location='<?php echo $information ?>'", 3000);
           }
           $('#urlCheckPage').css('display','block') //显示监测框
-          $('#btn').replaceWith('<button id="btn" onclick="jump()" class="mdui-btn mdui-ripple mdui-btn-dense">立即跳转</button>')
+          $('#btn').replaceWith('<button id="btn" onclick="jump()" class="mdui-btn mdui-ripple mdui-btn-dense">立即前往</button>')
           safeChange(data['beian'],data['icporg'],data['icpdode'],data['wordtit'],data['word'])
         }
     });
 } else {
-    $('#btn').replaceWith('<button onclick="jump()" class="mdui-btn mdui-ripple mdui-btn-dense">跳转中...</button>');
+    $('#btn').replaceWith('<button onclick="jump()" class="mdui-btn mdui-ripple mdui-btn-dense">轉跳中...</button>');
     window.setTimeout("window.location='<?php echo $information ?>'", 2000);
 }
     </script>
