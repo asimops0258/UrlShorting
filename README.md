@@ -1,4 +1,5 @@
-# 自行翻譯成繁體中文版
+## 自行翻譯成繁體中文版
+原項目：https://github.com/soxft/UrlShorting
 # URLshorting
 [![](https://data.jsdelivr.com/v1/package/gh/soxft/Urlshorting/badge)](https://www.jsdelivr.com/package/gh/soxft/Urlshorting)
 <a href="http://www.apache.org/licenses/LICENSE-2.0.html"> 
