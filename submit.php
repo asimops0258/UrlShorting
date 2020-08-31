@@ -19,16 +19,16 @@ if ($arr[0] == 200) {
     if ($type == 'shorturl') {
         echo "非法的URL";
     } else {
-        echo "非法的密语";
+        echo "非法的密語";
     }
 } elseif ($arr[0] == 1002) {
-    echo "您输入的域名或您的IP已被封禁!";
+    echo "您輸入的域名或您的IP已被封鎖!";
 } elseif($arr[0] == 3001 || $arr[0] == 3002) {
-    echo "密码只能为2-20位的英文,数字,标点或组合";
+    echo "密碼只能為2-20位的英數標點組合";
 }elseif($arr[0] == 2001 || $arr[0] == 2002) {
-    echo "自定义短域只能为" . $pass . "位的英文,数字或组合";
+    echo "自訂義短網址只能為" . $pass . "位的英數組合";
 }elseif($arr[0] == 2003) {
-    echo "该短域已被使用!";
+    echo "該自訂義短網址已被使用!";
 }else{
     echo "error: " . $arr[0];
 }
