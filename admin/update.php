@@ -1,17 +1,17 @@
 <head>
-    <title>检查更新 - 星辰短域|密语</title>
+    <title>檢查更新 - 星辰短網址|密語</title>
     <?php require_once "header.php"  ?>
 </head>
 <body>
     <div class="mdui-container">
         <div class="mdui-typo">
-             <h2 class="doc-chapter-title doc-chapter-title-first">检查更新</h2>
+             <h2 class="doc-chapter-title doc-chapter-title-first">檢查更新</h2>
             <div class="mdui-container">
                 <div class="mdui-typo">
                     <ul class="mdui-list">
                         <li class="mdui-list-item mdui-ripple"> 
                           <i class="mdui-list-item-avatar mdui-icon material-icons">border_vertical</i>
-                          <div class="mdui-list-item-content" style="font-weight:500;"> 当前版本: <?php echo $version?></div>
+                          <div class="mdui-list-item-content" style="font-weight:500;"> 目前版本: <?php echo $version?></div>
                         </li>
                         <li class="mdui-list-item mdui-ripple"> 
                           <i class="mdui-list-item-avatar mdui-icon material-icons">radio_button_unchecked</i>
@@ -26,7 +26,7 @@
     var $ = mdui.JQ;
     //make ajax request
     welcome = mdui.snackbar({
-      message: '正在获取新版本中...',
+      message: '正在取得最新版本號...',
       position: 'right-top'
     });
     $.ajax(
@@ -49,14 +49,14 @@
           if('<?php echo $version ?>' !== newversion)
           {
             mdui.snackbar({
-              message: '检测到新版本!',
+              message: '已檢測到最新版本!',
               position: 'right-top'
             });
             mdui.dialog({
                 title: '最新版本: ' + newversion,
                 content: info,
                 buttons: [{
-                        text: '稍后更新',
+                        text: '稍後更新',
                         bold: false,
                         close: true
                 },{
@@ -72,7 +72,7 @@
             });
           }else{
             mdui.snackbar({
-              message: '当前已是最新版本!',
+              message: '您目前使用的已是最新版!',
               position: 'right-top'
             });
           }
@@ -85,16 +85,16 @@
           
           if(textStatus == 'timeout')
           {
-            $('#newVersion').replaceWith('<span style="font-weight:500; id="newVersion">请求超时!</span>')
+            $('#newVersion').replaceWith('<span style="font-weight:500; id="newVersion">請求超時!</span>')
             mdui.snackbar({
-              message: '请求超时!',
+              message: '請求超時!',
               position: 'right-top'
             });
           }else
           {
             if(textStatus !== 'success'){
               mdui.snackbar({
-                message: '发时未知错误,请稍后再试.',
+                message: '發生未知錯誤,請稍後再試!',
                 position: 'right-top'
               });
             }
