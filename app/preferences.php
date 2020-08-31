@@ -8,7 +8,7 @@ if(md5($_SESSION['password']) !== $pass)
 {
   $json = [
       'code' => '1001',
-      'msg' => '非法的访问'
+      'msg' => '未經授權的訪問'
     ];
   exit(json_encode($json,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT));
 }
