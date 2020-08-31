@@ -20,8 +20,8 @@ if (empty($id)) {
   $arr1 = mysqli_fetch_assoc(mysqli_query($conn,"SELECT *FROM `ban` where `content`='$ip' or `content`='$id'"));
   $type = $arr1['type'];
   if (!empty($type)) {
-    echo("<br /><br /><center><img src=\"https://cdn.jsdelivr.net/gh/soxft/cdn@master/urlshorting/notice.png\" widht=\"85\"  height=\"85\" alt=\"错误\"></center>");
-    echo('<center><h1>该短域已被管理员封禁</h1></center></div>');
+    echo("<br /><br /><center><img src=\"https://cdn.jsdelivr.net/gh/soxft/cdn@master/urlshorting/notice.png\" widht=\"85\"  height=\"85\" alt=\"錯誤\"></center>");
+    echo('<center><h1>該短網址已被管理員封鎖</h1></center></div>');
     exit();
   }
   $arr1 = mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM `information` WHERE binary `shorturl`='$id'"));
@@ -121,32 +121,32 @@ if (empty($id)) {
         <div class="mdui-list">
           <a href="/" class="mdui-list-item">
             <i class="mdui-list-item-icon mdui-icon material-icons">filter_none</i>
-            &emsp;主页
+            &emsp;首頁
           </a>
           <a href="./help.php" class="mdui-list-item">
           <i class="mdui-list-item-icon mdui-icon material-icons">help_outline</i>
-          &emsp;帮助
+          &emsp;幫助
         </a>
           <a href="./admin" class="mdui-list-item">
             <i class="mdui-list-item-icon mdui-icon material-icons">person_outline</i>
-            &emsp;后台
+            &emsp;後台
           </a>
         </div>
         <a href="./about.php" class="mdui-list-item">
           <i class="mdui-list-item-icon mdui-icon material-icons">info_outline</i>
-          &emsp;关于
+          &emsp;關於
         </a>
         <div class="mdui-collapse-item ">
           <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
             <i class="mdui-list-item-icon mdui-icon material-icons">&#xe80d;</i>
-            &emsp;友链
+            &emsp;友鏈
             <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
           </div>
           <div class="mdui-collapse-item-body mdui-list">
-            <a href="//blog.xsot.cn" class="mdui-list-item mdui-ripple ">星辰日记</a>
+            <a href="//blog.xsot.cn" class="mdui-list-item mdui-ripple ">星辰日記</a>
           </div>
           <div class="mdui-collapse-item-body mdui-list">
-            <a href="//love.xsot.cn" class="mdui-list-item mdui-ripple ">星辰表白墙</a>
+            <a href="//love.xsot.cn" class="mdui-list-item mdui-ripple ">星辰表白牆</a>
           </div>
         </div>
       </div>
